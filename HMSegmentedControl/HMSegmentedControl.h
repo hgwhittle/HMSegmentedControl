@@ -43,6 +43,7 @@ typedef enum {
 @property (nonatomic, strong) NSArray *sectionTitles;
 @property (nonatomic, strong) NSArray *sectionImages;
 @property (nonatomic, strong) NSArray *sectionSelectedImages;
+@property (nonatomic, strong) NSMutableArray *filteredIndexes;
 
 /*
  Provide a block to be executed when selected index is changed.
@@ -71,6 +72,8 @@ typedef enum {
  Default is [UIColor blackColor]
  */
 @property (nonatomic, strong) UIColor *selectedTextColor;
+
+@property (nonatomic, strong) UIColor *filteredColor;
 
 /*
  Segmented control background color.

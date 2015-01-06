@@ -138,6 +138,8 @@
     self.backgroundColor = [UIColor whiteColor];
     self.opaque = NO;
     self.selectionIndicatorColor = [UIColor colorWithRed:52.0f/255.0f green:181.0f/255.0f blue:229.0f/255.0f alpha:1.0f];
+    self.filteredColor = [UIColor orangeColor];
+    self.filteredIndexes = [NSMutableArray new];
     
     self.selectedSegmentIndex = 0;
     self.segmentEdgeInset = UIEdgeInsetsMake(0, 5, 0, 5);
@@ -263,6 +265,10 @@
                 titleLayer.foregroundColor = self.selectedTextColor.CGColor;
             } else {
                 titleLayer.foregroundColor = self.textColor.CGColor;
+            }
+            
+            if ([self.filteredIndexes containsObject:@(idx)]) {
+                titleLayer.foregroundColor = self.filteredColor.CGColor;
             }
             
             titleLayer.contentsScale = [[UIScreen mainScreen] scale];
